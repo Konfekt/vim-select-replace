@@ -1,0 +1,28 @@
+    Vim-Select-Replace, Replace or Delete in multiple places
+
+                                          *Select-Replace* *select-replace*
+
+===========================================================================
+
+A Vim plug-in to replace or delete a selection in multiple places.
+
+1. Usage ~
+                              *Select-Replace-usage* *select-replace-usage*
+
+By this Vim plug-in, you can:
+
+- Hit `c` (and afterwards `<Esc>` to leave insert mode) or `d` followed by
+  `*`, `#`, `g*` or `g#` to replace  respectively delete the current word. Now
+  either:
+
+  - Press `n/N` to skip the next occurrence of this word, or
+  - Press `.` to repeat the previous move and change or deletion.
+
+- Hit `s` or `x` in visual mode to replace respectively delete the selection
+  under the cursor. Now either:
+
+  - Press `n/N` to skip the next occurrence of this selection, or
+  - Press `.` to repeat the previous move and change or deletion.
+
+
+vim:tw=78:ts=2:sts=2:sw=2:ft=help:norl
