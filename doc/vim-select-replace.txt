@@ -4,10 +4,10 @@
 
 ===========================================================================
 
-A Vim plug-in to replace or delete a selection in multiple places.
+A Vim plug-in to replace or delete a word or selection in multiple places.
 
 1. Usage ~
-                              *Select-Replace-usage* *select-replace-usage*
+                              *Select-Replace-Usage* *select-replace-usage*
 
 By this Vim plug-in, you can:
 
@@ -23,6 +23,20 @@ By this Vim plug-in, you can:
 
   - Press `n/N` to skip the next occurrence of this selection, or
   - Press `.` to repeat the previous move and change or deletion.
+
+2. Configuration ~
+                             *Select-Replace-Config* *select-replace-config*
+
+To change the default mappings, add your modifications of
+>
+  omap  *  <plug>(vim-select-replace-star)
+  omap  g* <plug>(vim-select-replace-g-star)
+  omap  #  <plug>(vim-select-replace-hash)
+  omap  g# <plug>(vim-select-replace-g-hash)
+
+  xmap  s  <plug>(vim-select-replace-s)
+  xmap  x  <plug>(vim-select-replace-x)
+<
 
 
 vim:tw=78:ts=2:sts=2:sw=2:ft=help:norl
