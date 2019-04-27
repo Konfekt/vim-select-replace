@@ -24,6 +24,19 @@ By this Vim plug-in, you can:
   - Press `n/N` to skip the next occurrence of this selection, or
   - Press `.` to repeat the previous move and change or deletion.
 
+Note that the operators `c` or `d` on a word are only exemplary; other
+examples are:
+
+- the operators `gu`, `gU`, `g~`  or `g?` to make all letters lower
+  respectively upper case, to toggle the cases of all letters, or to advance
+  each letter by $13$ positions in the Latin alphabet;
+- the operator `gr` of Ingo Karkat's Vim plug-in `ReplaceWithRegister` to
+  replace the word with the content of the unnamed register (or `"+gr` to
+  replace the word with the content of the clipboard);
+- the operator `yr` of Tim Pope's Vim plug-in `vim-surround` or the operator
+  `sa` of Masaaki Nakamura's `vim-sandwich` to surround the word with
+  delimiters to be specified.
+
 2. Configuration ~
                              *Select-Replace-Config* *select-replace-config*
 
