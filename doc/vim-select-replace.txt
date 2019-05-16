@@ -50,6 +50,21 @@ To change the default mappings, add your modifications of
   xmap  s  <plug>(vim-select-replace-s)
   xmap  x  <plug>(vim-select-replace-x)
 <
+For example, it might be convenient to mark the current cursor position, say by
+a mark labeled "s", before the selective replacements or deletions take place,
+so that hitting "'s" takes the cursor back to where it was:
+
+>
+  nnoremap <SID>(ms) ms
+
+  omap  *  <SID>(ms)<plug>(vim-select-replace-star)
+  omap  g* <SID>(ms)<plug>(vim-select-replace-g-star)
+  omap  #  <SID>(ms)<plug>(vim-select-replace-hash)
+  omap  g# <SID>(ms)<plug>(vim-select-replace-g-hash)
+
+  xmap  s  <SID>(ms)<plug>(vim-select-replace-s)
+  xmap  x  <SID>(ms)<plug>(vim-select-replace-x)
+<
 
 
 vim:tw=78:ts=2:sts=2:sw=2:ft=help:norl

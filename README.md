@@ -1,6 +1,3 @@
-*Vim-Select-Replace*
-==================
-
 A Vim plug-in to replace or delete a word or selection in multiple places.
 
 # Usage
@@ -39,6 +36,19 @@ xmap  x  <plug>(vim-select-replace-x)
 ```
 
 to your `vimrc`.
+For example, it might be convenient to mark the current cursor position, say by a mark labeled `s`, before the selective replacements or deletions take place, so that hitting `'s` takes the cursor back to where it was:
+
+```vim
+nnoremap <SID>(ms) ms
+
+omap  *  <SID>(ms)<plug>(vim-select-replace-star)
+omap  g* <SID>(ms)<plug>(vim-select-replace-g-star)
+omap  #  <SID>(ms)<plug>(vim-select-replace-hash)
+omap  g# <SID>(ms)<plug>(vim-select-replace-g-hash)
+
+xmap  s  <SID>(ms)<plug>(vim-select-replace-s)
+xmap  x  <SID>(ms)<plug>(vim-select-replace-x)
+```
 
 # Related Plug-ins
 
