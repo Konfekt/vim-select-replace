@@ -1,6 +1,11 @@
 if exists('g:loaded_SelectReplace')
   finish
 endif
+let g:loaded_SelectReplace = 1
+
+let s:keepcpo         = &cpo
+set cpo&vim
+" ------------------------------------------------------------------------------
 
 " *,#,g*/# in operator mode do NOT respect smartcase
 "  1. Press c*/# to change the current word then <Esc>. Now either:
@@ -32,4 +37,6 @@ silent! xmap <unique> x  <plug>(vim-select-replace-x)
 " silent! xnoremap <unique> <expr> *             '/' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
 " silent! xnoremap <unique> <expr> #             '?' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
 
-let g:loaded_SelectReplace = 1
+" ------------------------------------------------------------------------------
+let &cpo= s:keepcpo
+unlet s:keepcpo
