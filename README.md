@@ -45,4 +45,4 @@ It seems that Ingo Karkat's recent Vim plug-in in [vim-ChangeGlobally](https://g
 
 # Credits
 
-These ideas to make good use of `:help v_gn` have in essence been divulged by Romain Lafourcade.
+These ideas to make good use of `:help v_gn` have in essence been divulged by Romain Lafourcade and the function that returns the visual selection has been taken from @hayab14usa's [vim-asterik](https://github.com/haya14busa/vim-asterisk/)

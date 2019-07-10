@@ -13,7 +13,20 @@ function! SelectReplace#escape(string) abort
   return string
 endfunction
 
-" From https://github.com/haya14busa/vim-asterisk/blob/1a805e320aea9d671be129b4162ea905a8bc095e/autoload/asterisk.vim#L234
+" {{{ From https://github.com/haya14busa/vim-asterisk/blob/1a805e320aea9d671be129b4162ea905a8bc095e/autoload/asterisk.vim#L234
+"
+" MIT License:
+" Permission is hereby granted, free of charge, to any person obtaining
+" a copy of this software and associated documentation files (the
+" "Software"), to deal in the Software without restriction, including
+" without limitation the rights to use, copy, modify, merge, publish,
+" distribute, sublicense, and/or sell copies of the Software, and to
+" permit persons to whom the Software is furnished to do so, subject to
+" the following conditions:
+"
+" The above copyright notice and this permission notice shall be included
+" in all copies or substantial portions of the Software.
+
 let s:INT = { 'MAX': 2147483647 }
 
 " Assume the current mode is middle of visual mode.
@@ -128,4 +141,4 @@ endfunction
 function! s:compare_pos(x, y) abort
     return max([-1, min([1,(a:x[0] == a:y[0]) ? a:x[1] - a:y[1] : a:x[0] - a:y[0]])])
 endfunction
-
+" }}}
