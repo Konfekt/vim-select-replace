@@ -1,4 +1,4 @@
-A Vim plug-in to replace or delete a word or selection in multiple places.
+A Vim plug-in to selectively replace or delete the current word or visually selected text in multiple places.
 
 # Usage
 
@@ -39,10 +39,18 @@ xmap  x  <plug>(vim-select-replace-x)
 
 to your `vimrc`.
 
-# Related Plug-ins
+# Hints
 
-It seems that Ingo Karkat's recent Vim plug-in in [vim-ChangeGlobally](https://github.com/inkarkat/vim-ChangeGlobally) achieves something similar to this one.
+To selectively replace by a confirmation dialog the current visual selection by a string to be supplied on the command-line, add
+
+```vim
+xnoremap S "*y<Esc>:<c-u>%substitute/\V<c-r>=substitute(escape(@*, '\/\|'), "\n", '\\n', 'g')<cr>//cg<Left><Left><Left>
+```
+
+to your `vimrc`!
+
+Ingo Karkat's recent Vim plug-in in [vim-ChangeGlobally](https://github.com/inkarkat/vim-ChangeGlobally) achieves something similar to this one.
 
 # Credits
 
-These ideas to make good use of `:help v_gn` have in essence been divulged by Romain Lafourcade and the function that returns the visual selection has been taken from @hayab14usa's [vim-asterik](https://github.com/haya14busa/vim-asterisk/)
+These ideas to make good use of `:help v_gn` have in essence been divulged by Romain Lafourcade, the function that returns the visual selection has been taken from @haya14busa's [vim-asterik](https://github.com/haya14busa/vim-asterisk/) and a variant of the above mapping hinted at was found at Jan Larre's [dotfiles](https://github.com/majutsushi/etc).
