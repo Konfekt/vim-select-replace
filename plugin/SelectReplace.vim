@@ -26,13 +26,25 @@ silent! xnoremap <expr> <plug>(vim-select-replace-s)
 silent! xnoremap <expr> <plug>(vim-select-replace-x)
       \ '/\C' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>' . '``dgn'
 
-silent! omap <unique> *  <plug>(vim-select-replace-star)
-silent! omap <unique> g* <plug>(vim-select-replace-g-star)
-silent! omap <unique> #  <plug>(vim-select-replace-hash)
-silent! omap <unique> g# <plug>(vim-select-replace-g-hash)
+if !hasmapto('<Plug>(vim-select-replace-star)', 'o')
+  silent! omap <unique> *  <plug>(vim-select-replace-star)
+endif
+if !hasmapto('<Plug>(vim-selshect-replace-g-star)', 'o')
+  silent! omap <unique> g* <plug>(vim-select-replace-g-star)
+endif
+if !hasmapto('<Plug>(vim-select-replace-hash)', 'o')
+  silent! omap <unique> #  <plug>(vim-select-replace-hash)
+endif
+if !hasmapto('<Plug>(vim-select-replace-g-hash)', 'o')
+  silent! omap <unique> g# <plug>(vim-select-replace-g-hash)
+endif
 
-silent! xmap <unique> s  <plug>(vim-select-replace-s)
-silent! xmap <unique> x  <plug>(vim-select-replace-x)
+if !hasmapto('<Plug>(vim-select-replace-s)', 'x')
+  silent! xmap <unique> s  <plug>(vim-select-replace-s)
+endif
+if !hasmapto('<Plug>(vim-select-replace-x)', 'x')
+  silent! xmap <unique> x  <plug>(vim-select-replace-x)
+endif
 
 " silent! xnoremap <unique> <expr> *             '/' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
 " silent! xnoremap <unique> <expr> #             '?' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
