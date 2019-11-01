@@ -38,6 +38,7 @@ xmap  x  <plug>(vim-select-replace-x)
 ```
 
 to your `vimrc`.
+For example, to disable `x`, map it to, say, `<sid>(disable-vim-select-replace-x)`.
 
 # Hints
 
@@ -50,6 +51,22 @@ xnoremap S "*y<Esc>:<c-u>%substitute/\V<c-r>=substitute(escape(@*, '\/\|'), "\n"
 to your `vimrc`!
 
 Ingo Karkat's recent Vim plug-in in [vim-ChangeGlobally](https://github.com/inkarkat/vim-ChangeGlobally) achieves something similar to this one.
+
+# Related Plug-ins
+
+Use following mappings of [vim-asterik](https://github.com/haya14busa/vim-asterisk/) to avoid this plug-in's mapping being overridden:
+
+```vim
+xmap *   <Plug>(asterisk-*)
+xmap #   <Plug>(asterisk-#)
+xmap g*  <Plug>(asterisk-g*)
+xmap g#  <Plug>(asterisk-g#)
+
+nmap *   <Plug>(asterisk-*)
+nmap #   <Plug>(asterisk-#)
+nmap g*  <Plug>(asterisk-g*)
+nmap g#  <Plug>(asterisk-g#)
+```
 
 # Credits
 
