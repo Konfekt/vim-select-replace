@@ -1,14 +1,14 @@
 function! SelectReplace#escape(string) abort
   let string = a:string
 
-  " remove final line ending
-  let string = substitute(string, "\v\r?\n?$", '', '')
-  " escape line endings
-  let string = substitute(string, "\n", '\n', 'g')
-  let string = substitute(string, "\r", '\r', 'g')
-
   " Escape special characters in Vim regex.
   let string = '\V' . escape(string, '\/')
+
+  " remove final line ending
+  let string = substitute(string, "\r\?\n\?$", '', '')
+  " escape line endings
+  let string = substitute(string, "\n", '\\n', 'g')
+  let string = substitute(string, "\r", '\\r', 'g')
 
   return string
 endfunction
