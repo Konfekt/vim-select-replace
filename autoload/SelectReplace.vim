@@ -31,7 +31,7 @@ let s:INT = { 'MAX': 2147483647 }
 
 " Assume the current mode is middle of visual mode.
 " @return selected text
-function! search#getVisualSelection() abort
+function! SelectReplace#getVisualSelection() abort
     let mode = mode()
     let end_col = s:curswant() is s:INT.MAX ? s:INT.MAX : s:get_col_in_visual('.')
     let current_pos = [line('.'), end_col]
