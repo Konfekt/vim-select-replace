@@ -1,4 +1,4 @@
-function! SelectReplace#escape(string) abort
+function! selectreplace#escape(string) abort
   let string = a:string
 
   " Escape special characters in Vim regex.
@@ -31,7 +31,7 @@ let s:INT = { 'MAX': 2147483647 }
 
 " Assume the current mode is middle of visual mode.
 " @return selected text
-function! SelectReplace#getVisualSelection() abort
+function! selectreplace#getVisualSelection() abort
     let mode = mode()
     let end_col = s:curswant() is s:INT.MAX ? s:INT.MAX : s:get_col_in_visual('.')
     let current_pos = [line('.'), end_col]

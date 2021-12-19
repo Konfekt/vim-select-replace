@@ -1,7 +1,7 @@
-if exists('g:loaded_SelectReplace')
+if exists('g:loaded_selectreplace')
   finish
 endif
-let g:loaded_SelectReplace = 1
+let g:loaded_selectreplace = 1
 
 let s:keepcpo         = &cpo
 set cpo&vim
@@ -22,9 +22,9 @@ silent! onoremap <expr> <plug>(vim-select-replace-g-hash) '<esc>?\C\V'   . escap
 
 " change/delete all occurences of visual selection
 silent! xnoremap <expr> <plug>(vim-select-replace-s)
-      \ '/\C' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>' . '``cgn'
+      \ '/\C' . selectreplace#escape(selectreplace#getVisualSelection()) . '<CR><ESC>' . '``cgn'
 silent! xnoremap <expr> <plug>(vim-select-replace-x)
-      \ '/\C' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>' . '``dgn'
+      \ '/\C' . selectreplace#escape(selectreplace#getVisualSelection()) . '<CR><ESC>' . '``dgn'
 
 if !hasmapto('<Plug>(vim-select-replace-star)', 'o')
   silent! omap <unique> *  <plug>(vim-select-replace-star)
@@ -46,8 +46,8 @@ if !hasmapto('<Plug>(vim-select-replace-x)', 'x')
   silent! xmap <unique> x  <plug>(vim-select-replace-x)
 endif
 
-" silent! xnoremap <unique> <expr> *             '/' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
-" silent! xnoremap <unique> <expr> #             '?' . SelectReplace#escape(SelectReplace#getVisualSelection()) . '<CR><ESC>'
+" silent! xnoremap <unique> <expr> *             '/' . selectreplace#escape(selectreplace#getVisualSelection()) . '<CR><ESC>'
+" silent! xnoremap <unique> <expr> #             '?' . selectreplace#escape(selectreplace#getVisualSelection()) . '<CR><ESC>'
 
 " ------------------------------------------------------------------------------
 let &cpo= s:keepcpo
