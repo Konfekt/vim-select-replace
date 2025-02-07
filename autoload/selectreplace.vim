@@ -13,6 +13,13 @@ function! selectreplace#escape(string) abort
   return string
 endfunction
 
+if exists('*getregion') " v:version >= 901 || has('nvim-0.10.1')
+    function! selectreplace#getVisualSelection() abort
+        return join(getregion(getpos('v'), getpos('.'), #{ type: mode() }),"\n")
+    endfunction
+    finish
+endif
+
 " {{{ From https://github.com/haya14busa/vim-asterisk/blob/1a805e320aea9d671be129b4162ea905a8bc095e/autoload/asterisk.vim#L234
 "
 " MIT License:
