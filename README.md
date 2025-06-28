@@ -18,7 +18,7 @@ Note that the operators `c` or `d` on a word are only exemplary;
 other examples are:
 
 -  the operators `gu`, `gU`, `g~`  or `g?` to make all letters lower respectively upper case, to toggle the cases of all letters, or to advance each letter by 13 positions in the Latin alphabet;
-- the operator `gr` of Ingo Karkat's Vim plug-in [ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister) to replace the word with the content of the unnamed register (or `"+gr` to replace the word with the content of the clipboard);
+- the operator `gr` of Ingo Karkat's Vim plug-in [ReplaceWithRegister](https://github.com/inkarkat/vim-ReplaceWithRegister) to replace the word with the content of the unnamed register (or `"+gr` to replace the word with the content of the clipboard);
 - the operator `yr` of Tim Pope's Vim plug-in [vim-surround](https://github.com/tpope/vim-surround) or the operator `sa` of Masaaki Nakamura's [vim-sandwich](https://github.com/machakann/vim-sandwich) to surround the word with delimiters to be specified.
 
 Vim plug-ins such as [ctrlsf.vim](https://github.com/dyng/ctrlsf.vim) and [quickfix-reflector.vim](https://github.com/stefandtw/quickfix-reflector.vim) enable you to selectively operating on occurrences throughout the whole current work dir.
